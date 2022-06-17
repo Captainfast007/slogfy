@@ -1,0 +1,54 @@
+name: Vikalp
+description: A Flutter Based Video calling App
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.1.0+1
+
+environment:
+  sdk: ">=2.2.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  fluttertoast: ^8.0.9
+  cupertino_icons: ^1.0.2
+  google_fonts: ^2.0.0 #For Styling
+ # font_awesome_flutter: ^9.0.0 # For Icons
+  jitsi_meet: ^2.1.0 # For Video calls
+  shared_preferences: ^2.0.5 # For Login Register Information
+  data_connection_checker: ^0.3.4 #For Internet Connection Checking
+  #Firebase Library
+  firebase_core: ^1.0.2
+  firebase_auth: ^3.3.10
+  firebase_database: ^9.0.8
+  motion_tab_bar_v2: ^0.2.6
+  tab_indicator_styler: ^2.0.0
+  flutter_switch: ^0.3.0
+  random_string: ^2.1.0
+  share: ^2.0.1
+  flutter_html: ^2.2.1
+  firebase_storage: ^10.2.9
+  file_picker: ^4.5.1
+ # path_provider: ^2.0.9
+  #path: ^1.8.0
+  cloud_firestore: ^3.1.10
+ # cached_network_image: ^3.2.0
+  get: ^4.6.1
+
+  #flutter_launcher_icons: ^0.9.3
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+
+flutter:
+
+  uses-material-design: true
+  
+  assets:
+    - assets/
+    - assets/icons/

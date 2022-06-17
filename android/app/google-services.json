@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "837797653265",
+    "project_id": "meet-e3bcc",
+    "storage_bucket": "meet-e3bcc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:837797653265:android:21ac2e68a8b92ecbe47ab0",
+        "android_client_info": {
+          "package_name": "com.slogfy.meet"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "837797653265-q2gv12r3sdg73q9dhcjjgib30k0m5n46.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdyc8Gf7s3GKN_JHPB5UALCgSTXkey1BY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "837797653265-q2gv12r3sdg73q9dhcjjgib30k0m5n46.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
