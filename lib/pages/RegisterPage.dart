@@ -30,6 +30,10 @@ class _RegisterPageState extends State<RegisterPage> {
   bool enabler(){
     return enableTeacher;
   }
+@override
+void dispose(){
+    super.dispose();
+}
 
 
   @override

@@ -60,7 +60,7 @@ class _SplashScreenState extends State<SplashScreen> {
     checkConnection(context);
     isLogin();
     Timer(Duration(seconds: 3),
-        () => Get.to(isLoginValue ? DashBoard(0,"History") : LoginPage()));
+        () =>  navigator.pushReplacement(MaterialPageRoute(builder: (context)=>isLoginValue?DashBoard(0, "History"):LoginPage())));
 
     super.initState();
   }

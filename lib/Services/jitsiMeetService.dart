@@ -13,6 +13,7 @@ class JitsiMeets {
 
       var options = JitsiMeetingOptions()
         ..room = room // Required, spaces will be trimmed
+        ..serverURL="https://meet.slogfy.com"
         ..subject = subject
         ..userDisplayName = name
         ..userEmail = email

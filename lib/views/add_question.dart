@@ -138,7 +138,11 @@ class _AddQuestionState extends State<AddQuestion> {
                         GestureDetector(
                           onTap: () {
                             uploadQuizData();
-                            Navigator.push(context, MaterialPageRoute(builder: (context)=>DashBoard(3,"Quiz")));
+                            navigator.pushAndRemoveUntil<void>(
+                              MaterialPageRoute<void>(
+                                  builder: (BuildContext context) => DashBoard(3, "Quiz")),
+                              ModalRoute.withName('/'),
+                            );
                           },
                           child: Container(
                             alignment: Alignment.center,

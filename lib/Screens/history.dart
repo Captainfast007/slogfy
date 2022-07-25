@@ -65,7 +65,7 @@ class _HistoryState extends State<Histor> {
                           return Padding(
                             padding: const EdgeInsets.only(left: 10, right: 10),
                             child: Container(
-                              height: 80,
+                              height: 95,
                               margin: EdgeInsets.only(bottom: 13),
                               padding: EdgeInsets.only(
                                   left: 24, top: 12, bottom: 12, right: 22),
@@ -107,12 +107,15 @@ class _HistoryState extends State<Histor> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.center,
                                         children: <Widget>[
-                                          Text(
-                                            "Subject -: ${list[index]["Subject"]}",
-                                            style: GoogleFonts.inter(
-                                                fontSize: 12,
-                                                fontWeight: FontWeight.w700,
-                                                color: Colors.black),
+                                          SizedBox(
+                                            width: 130,
+                                            child: Text(
+                                              "Subject -: ${list[index]["Subject"]}",
+                                              style: GoogleFonts.inter(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w700,
+                                                  color: Colors.black),
+                                            ),
                                           ),
                                           SizedBox(
                                             height: 5,

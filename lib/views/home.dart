@@ -67,8 +67,11 @@ class _HomeState extends State<Home> {
       appBar: AppBar(
         leading: IconButton(
             onPressed: () {
-              Navigator.push(context,
-              MaterialPageRoute(builder: (context)=>DashBoard(3,"Quiz")));
+              navigator.pushAndRemoveUntil<void>(
+                MaterialPageRoute<void>(
+                    builder: (BuildContext context) => DashBoard(3, "Quiz")),
+                ModalRoute.withName('/'),
+              );
             },
             icon: Icon(Icons.arrow_back)),
         title: AppLogo(),

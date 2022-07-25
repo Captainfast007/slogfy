@@ -111,7 +111,11 @@ class _SettingScreenState extends State<SettingScreen> {
                         await SharedPreferences.getInstance();
                     pref.clear();
                     await FirebaseAuth.instance.signOut();
-                    Get.to(LoginPage());
+                    navigator.pushAndRemoveUntil<void>(
+                      MaterialPageRoute<void>(
+                          builder: (BuildContext context) => LoginPage()),
+                      ModalRoute.withName('/'),
+                    );
                   },
                   child: Card(
                     elevation: 3,

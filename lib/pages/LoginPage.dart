@@ -142,7 +142,7 @@ class _LoginPageState extends State<LoginPage> {
                               setState(() {
                                 isLoading = false;
                               });
-                              Get.to((emailverify()));
+                             navigator.pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>emailverify()), (route) => false);
                             } else {
                               setState(() {
                                 isLoading = false;

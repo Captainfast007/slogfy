@@ -1,5 +1,3 @@
-
-
 import 'package:Vikalp/Screens/welcome.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -10,7 +8,6 @@ import 'package:random_string/random_string.dart';
 import 'package:tab_indicator_styler/tab_indicator_styler.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:share/share.dart';
-
 import '../Services/jitsiMeetService.dart';
 import '../Services/services.dart';
 import '../pages/help_page.dart';
@@ -88,10 +85,10 @@ class _DashBoardState extends State<DashBoard> with TickerProviderStateMixin {
 
   returnScreeen() {
     switch (option) {
-      case 0:
+      case 1:
         return createMeeting();
         break;
-      case 1:
+      case 0:
         return joinMeeting();
         break;
       default:
@@ -197,10 +194,10 @@ class _DashBoardState extends State<DashBoard> with TickerProviderStateMixin {
                 },
                 tabs: [
                   Tab(
-                    text: "Create Meeting",
+                    text: "Join Class",
                   ),
                   Tab(
-                    text: "Join Class",
+                    text: "Create Class",
                   ),
                 ],
                 labelColor: Colors.black,
@@ -239,12 +236,12 @@ class _DashBoardState extends State<DashBoard> with TickerProviderStateMixin {
                       })
                     },
                     tabs: [
-                      //Tab(
-                      //text: "Create Meeting",
-                      //),
                       Tab(
-                        text: "Join Class",
+                      text: "Join Class",
                       ),
+                      //Tab(
+                     //   text: "Join Class",
+                    //  ),
                     ],
                     labelColor: Colors.black,
                     indicator: RectangularIndicator(
@@ -295,7 +292,7 @@ Widget createMeeting() {
                       controller: subject,
                       validator: (meetings) {
                         if (meetings == null || meetings.isEmpty) {
-                          return "Meeting Subject Is Empty";
+                          return "Class Subject Is Empty";
                         }
                         return null;
                       },
@@ -304,7 +301,7 @@ Widget createMeeting() {
                       ),
                       decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          labelText: 'Meeting Subject',
+                          labelText: 'Class Subject',
                           prefixIcon: Icon(Icons.subject),
                           labelStyle: TextStyle(fontSize: 15)),
                     ),
@@ -318,7 +315,7 @@ Widget createMeeting() {
                       controller: meeting,
                       validator: (meetings) {
                         if (meetings == null || meetings.isEmpty) {
-                          return "Meeting Name Is Empty";
+                          return "Class Name Is Empty";
                         }
                         return null;
                       },
@@ -327,7 +324,7 @@ Widget createMeeting() {
                       ),
                       decoration: InputDecoration(
                           border: OutlineInputBorder(),
-                          labelText: 'Meeting Name',
+                          labelText: 'Class Name',
                           prefixIcon: Icon(Icons.videocam),
                           labelStyle: TextStyle(fontSize: 15)),
                     ),
@@ -410,13 +407,13 @@ Widget createMeeting() {
                             meetingCode,
                             email,
                           );
-                          meets.joinMeeting(meetingCode, name, email,
+                          meets.joinMeeting(meetingCode.toLowerCase(), name, email,
                               subject.text, enableAudio, enableVideo);
                         }
                       },
                       child: isLoading != true
                           ? Text(
-                              'Create Meeting'.toUpperCase(),
+                              'Create Class'.toUpperCase(),
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
@@ -500,7 +497,7 @@ Widget createMeeting() {
                         controller: joinmeeting,
                         validator: (meetings) {
                           if (meetings == null || meetings.isEmpty) {
-                            return "Meeting Name Is Empty";
+                            return "Class Name Is Empty";
                           }
                           return null;
                         },
@@ -509,7 +506,7 @@ Widget createMeeting() {
                         ),
                         decoration: InputDecoration(
                             border: OutlineInputBorder(),
-                            labelText: 'Meeting Name',
+                            labelText: 'Class Name',
                             prefixIcon: Icon(Icons.videocam),
                             labelStyle: TextStyle(fontSize: 15)),
                       ),
@@ -586,13 +583,13 @@ Widget createMeeting() {
                     child: MaterialButton(
                       onPressed: () async {
                         if (_formKey.currentState.validate()) {
-                          meets.joinMeeting(joinmeeting.text, name, email,
+                          meets.joinMeeting(joinmeeting.text.toLowerCase(), name, email,
                               subject.text, enableAudio, enableVideo);
                         }
                       },
                       child: isLoading != true
                           ? Text(
-                              'Join Meeting'.toUpperCase(),
+                              'Join cLASS'.toUpperCase(),
                               style: TextStyle(
                                 fontSize: 15,
                                 fontWeight: FontWeight.bold,
